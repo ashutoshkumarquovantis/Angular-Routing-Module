@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+
+        <!-- there are two types of paths that we are using in our app
+        1. Relative Path -> 'servers', here it is appended to the upper path present already "lc.com/myspace/servers"
+        2. Absolute Path -> '/servers' always gets appended to the root domain "lc.com/servers",
+        2.a. './servers' same as Relative path
+        2.b. '../servers' go one path above and then add 'servers' to it and so on '../../servers'..  -->
+
+        <li role="presentation" routerLinkActive = "active" [routerLinkActiveOptions] = "{exact : true}"><a routerLink = "/">Home</a></li>
+        <li role="presentation" routerLinkActive = "active"><a routerLink = "/servers">Servers</a></li>
+        <li role="presentation" routerLinkActive = "active"><a [routerLink] = " ['/users'] ">Users</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
